@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Flag of Anguilla</title>
+</head>
+
+<body>
+    <canvas id="flag" width="600" height="300"></canvas>
+
+    <script>
+
+        const canvas = document.getElementById("flag");
+        const ctx = canvas.getContext("2d");
+
+        // Bakcground (blue field)
+        ctx.fillStyle = "#012169"; // Blue color
+        ctx.fillRect(0,0,600,300);
+
+        // Union Jack (simplified version)
+        ctx.fillStyle = "00247D";
+        ctx.fillRect(0,0,200,120);
+
+        // White Diagonals
+        ctx.strokeStyle = "white";
+        ctx.lineWidth = 20;
+        ctx.beginPath();
+        ctx.moveTo(0,0);
+        ctx.lineTo(200,120);
+        ctx.moveTo(200,0);
+        ctx.lineTo(0,120);
+        ctx.stroke();
+
+        // Red Diagonals
+        ctx.strokeStyle = "red";
+        ctx.lineWidth = 10;
+        ctx.beginPath();
+        ctx.moveTo(0,0);
+        ctx.lineTo(200,120);
+        ctx.moveTo(200,0);
+        ctx.lineTo(0,120);
+        ctx.stroke();
+
+        // White Cross
+        ctx.fillStyle = "white";
+        ctx.fillRect(80, 0, 40, 120);
+        ctx.fillRect(0,40, 200, 40);
+
+        // Red Cross
+        ctx.fillStyle = "red";
+        ctx.fillRect(90,0,20,120);
+        ctx.fillRect(0,50,200,20);
+
+        // Coat of Arms (simplified)
+        ctx.beginPath();
+        ctx.arc(420,160, 50, 0, Math.PI * 2, true);
+        ctx.fiilStyle = "#99d9EA";
+        ctx.fill();
+
+        // Stylized Dolphins
+        ctx.strokeStyle = "#FFCC33";
+        ctx.lineWidth = 4;
+
+        // Three curved shapes
+        for(let i = 0; i < 3; i++)
+    {
+        ctx.beginPath();
+        ctx.arc(400 + i*20, 160 - i*5, 15,0.5,2.5);
+        ctx.stroke();
+
+    }
+
+    // White Wave base
+    ctx.fillStyle = "white";
+        ctx.beginPath();
+        ctx.moveTo(370, 180);
+        ctx.quadraticCurveTo(400, 200, 430, 180);
+        ctx.quadraticCurveTo(460, 160, 490, 180);
+        ctx.lineTo(490, 200);
+        ctx.lineTo(370, 200);
+        ctx.closePath();
+        ctx.fill();
+
+    // Blue Waves
+    ctx.fillStyle = "#0072CE";
+        ctx.beginPath();
+        ctx.moveTo(370, 180);
+        ctx.quadraticCurveTo(400, 190, 430, 180);
+        ctx.quadraticCurveTo(460, 170, 490, 180);
+        ctx.lineTo(490, 200);
+        ctx.lineTo(370, 200);
+        ctx.closePath();
+        ctx.fill();
+
+    </script>
+
+</body>
+
+
+</html>
